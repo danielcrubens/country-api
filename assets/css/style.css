@@ -29,7 +29,7 @@ body {
   top: 50%;
   left: 50%;
   border-radius: 0.62em;
-  box-shadow: 0 1.25em 1.8em var(--box-shadow)
+  box-shadow: 0 1.25em 1.8em var(--box-shadow);
 }
 .search-wrapper {
   display: grid;
@@ -94,7 +94,43 @@ body {
   color: var(--erro);
 }
 
-@media (max-width:480px) {
+.popup .content {
+  display: none;
+  position: absolute;
+  width: 335px;
+  height: auto;
+  top: -12rem;
+  left:100%;
+  margin: auto;
+  background-color: var(--branco);
+  border-radius: 0.62em;
+  box-shadow: 0px 0px 9px 0px var(--box-shadow) ;
+  z-index: 102;
+  padding: 1.3rem;
+}
+
+.popup .content p {
+  font-size: 15px;
+  margin-bottom: 0;
+  color: var(--azul-marinho);
+}
+
+.popup .content #btnClose {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.2rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color:var(--azul-marinho);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+.popup .popup-text img{
+  padding-left: .3rem;
+}
+
+@media (max-width:575px) {
   body{
     padding: 2rem 0;
   }
@@ -116,4 +152,16 @@ body {
 .container h2{
   margin-bottom: 0;
 }
+
+.popup .content{
+  left: 0;
+  right: 0;
+  top: -9rem;
+}
+}
+@media (max-width:991px) {
+  .popup .content{
+    left: 0;
+    right: 0;
+  }
 }

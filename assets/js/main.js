@@ -50,3 +50,38 @@ searchBtn.addEventListener('click', () => {
       }
     })
 })
+
+const popupTexts = [
+  "<strong>Brazil </strong>", "<strong>Japan</strong>",
+  "<strong>France</strong>", "<strong>Germany</strong>",
+  "<strong>China</strong>","<strong>Tanzania</strong>"
+]
+
+const popupTextsWithFlags = [
+  popupTexts[0]+ "<img src='https://flagcdn.com/16x12/br.png'>",
+  popupTexts[1]+ "<img src='https://flagcdn.com/16x12/jp.png'>",
+  popupTexts[2]+ "<img src='https://flagcdn.com/16x12/fr.png'>" ,
+  popupTexts[3]+ "<img src='https://flagcdn.com/16x12/de.png'>",
+  popupTexts[4]+ "<img src='https://flagcdn.com/16x12/cn.png'>",
+  popupTexts[5]+ "<img src='https://flagcdn.com/16x12/tz.png'>"
+];
+
+setTimeout(function () {
+  let delayedPopup = document.querySelector("#delayedPopup")
+  let randomText = popupTextsWithFlags[Math.floor(Math.random() * popupTextsWithFlags.length)];
+  let additionalText = "Hey, uma sugestão! pesquise por ";
+  delayedPopup.querySelector(".popup-text").innerHTML = additionalText + " " + randomText;
+  delayedPopup.style.display = "block"
+}, 3400)
+
+document.querySelector("#btnClose").addEventListener("click", function (e) {
+  HidePopup()
+  e.preventDefault()
+})
+
+function HidePopup() {
+  let delayedPopup = document.querySelector("#delayedPopup")
+  setTimeout(function () {
+    delayedPopup.style.display = "none"
+  }, 100)
+}
